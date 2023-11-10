@@ -6,7 +6,6 @@ export function useClientData() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    console.log(`${baseUrl}/clients`);
     fetch(`${baseUrl}/clients`)
       .then((response) => {
         if (!response.ok) {
@@ -23,27 +22,30 @@ export function useClientData() {
       });
   }, []);
 
-  const addClient = (newClient) => {
-    return fetch(`${baseUrl}/clients`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(newClient),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`Error adding client (Status: ${response.status})`);
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setClientData([...clientData, data]);
-      })
-      .catch((error) => {
-        setError(error.message);
-        console.error('Error adding client:', error);
+  const addClient = async (newClient) => {
+    try {
+      console.log(`${baseUrl}/clients`);
+      const response = await fetch(`${baseUrl}/clients`, {
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+        },
+        body: JSON.stringify(newClient),
       });
+
+      console.log(response);
+      if (!response.ok) {
+        throw new Error(`Error adding client (Status: ${response.status})`);
+      }
+      const data = await response.json();
+      setClientData([...clientData, data]);
+    } catch (error) {
+      setError(error.message);
+      console.error('Error adding client:', error);
+    }
   };
 
   return { clientData, addClient, error };

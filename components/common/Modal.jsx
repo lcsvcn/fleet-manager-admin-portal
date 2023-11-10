@@ -45,7 +45,7 @@ const Modal = ({title, addItem, options, modal, setModal}) => {
                         {(item.type === "alphanumeric") ?
                              <input type="text" id="alphanumeric" name="alphanumeric" pattern="[A-Za-z0-9\s]*" title="Please enter alphanumeric characters only." className="w-[75%] border-2 border-purple-600/50" onChange={(e) => handleInputChange(index, e)} required />
                         :
-                            <input type="email" id="email" name="email" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Please enter email" className="w-[75%] border-2 border-purple-600/50" onChange={(e) => handleInputChange(index, e)} required />
+                            <input type="email" id="email" name="email"  title="Please enter email" className="w-[75%] border-2 border-purple-600/50" onChange={(e) => handleInputChange(index, e)} required />
                         }
                     </div>
                 ))}
