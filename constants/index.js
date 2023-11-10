@@ -42,6 +42,7 @@ export const socials = [
     url: '/facebook.svg',
   },
 ];
-
 export const baseUrl = "https://fleet-manager-backend.onrender.com/api/v1";
+
+// Use below for testing
 // export const baseUrl = "http://localhost:3100/api/v1";

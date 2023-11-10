@@ -20,7 +20,7 @@ const ClientDashboard = () => {
       setSnackbarMessage(storedSnackbarMessage);
       setTimeout(() => {
         closeSnackbar();
-      }, 5000);
+      }, 10000);
     }
   }, []);
 
