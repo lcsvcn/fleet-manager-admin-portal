@@ -56,6 +56,8 @@ The Fleet Manager Admin Portal depends on the Fleet Manager Backend. Make sure t
 
 2. Open your browser and visit [http://localhost:3000](http://localhost:3000) to access the admin portal.
 
+3. The Admin user email is test@gmail.com and user password is test. This user is hardcoded an unique, there is no other user that will allow login.
+
 ### CORS Issues (Production)
 
 **Note:** The production version of this app may experience CORS (Cross-Origin Resource Sharing) issues, especially if the backend is hosted on a different domain. Ensure the backend server's CORS settings allow requests from your production domain.
