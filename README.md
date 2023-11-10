@@ -8,7 +8,7 @@ Follow these instructions to get the admin portal up and running on your local m
 
 ### Prerequisites
 
-- Node.js: Make sure you have Node.js installed. You can download it [here](https://nodejs.org/).
+- Node.js: Make sure you have Node.js version 18 installed. You can download it [here](https://nodejs.org/).
 - pnpm: Make sure you have `pnpm` installed. You can install it globally using the following command:
 
   ```bash
