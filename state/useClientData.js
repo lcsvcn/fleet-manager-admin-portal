@@ -9,7 +9,7 @@ export function useClientData() {
     fetch(`${baseUrl}/clients`)
       .then((response) => {
         if (response.status >= 300) {
-          setError(`Error getting clients (Status: ${response.status})`);
+          setError(`Error getting client (Status: ${response.status})`);
         }
         return response.json();
       })
