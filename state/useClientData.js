@@ -8,8 +8,8 @@ export function useClientData() {
   useEffect(() => {
     fetch(`${baseUrl}/clients`)
       .then((response) => {
-        if (!response.ok) {
-          throw new Error(`Network response was not ok (Status: ${response.status})`);
+        if (response.status >= 300) {
+          setError(`Error getting clients (Status: ${response.status})`);
         }
         return response.json();
       })
@@ -33,9 +33,8 @@ export function useClientData() {
         body: JSON.stringify(newClient),
       });
 
-      console.log(response);
-      if (!response.ok) {
-        throw new Error(`Error adding client (Status: ${response.status})`);
+      if (response.status >= 300) {
+        setError(`Error adding client (Status: ${response.status})`);
       }
       const data = await response.json();
       setClientData([...clientData, data]);
