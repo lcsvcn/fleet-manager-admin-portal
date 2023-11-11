@@ -27,11 +27,8 @@ export function useClientData() {
       console.log(`${baseUrl}/clients`);
       const response = await fetch(`${baseUrl}/clients`, {
         method: 'POST',
-        mode: 'cors',
         headers: {
           'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
         },
         body: JSON.stringify(newClient),
       });
