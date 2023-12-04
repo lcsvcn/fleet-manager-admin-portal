@@ -2,6 +2,12 @@
 
 Welcome to the Fleet Manager Admin Portal! This web application allows administrators to efficiently manage and oversee the entire fleet.
 
+## Admin User
+
+The admin account for testing is:
+- Email: test@gmail.com
+- Password: test
+
 ## Getting Started
 
 Follow these instructions to get the admin portal up and running on your local machine.
